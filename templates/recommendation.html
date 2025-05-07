@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie Recommendation System</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  </head>
+  <body class="bg-gray-300">
+    <header class="text-gray-600 body-font -my-8">
+      <div class="container mx-auto flex flex-wrap p-4 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-3 md:mb-0">
+          <div class="w-17 h-17 text-white p-2 rounded-full">
+            <img class="object-cover object-center rounded" alt="hero" src="../static/logo1.svg">
+          </div>
+        </a>
+      
+          <a href="/" style="text-decoration: none;"><span class="ml-3 text-xl -my-50">Movie Recommendation Stytem  </span></a>
+        </a>
+        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+          <a href = "/" style="text-decoration: none;" class ="mr-5 hover:text-gray-900">Home</a>
+          <a href = "/about" style="text-decoration: none;" class="mr-5 hover:text-gray-900">About</a>
+          <a href = "/recommendation" style="text-decoration: none;" class="mr-5 hover:text-gray-900">Recommendation</a>
+          <a href = "/contact" style="text-decoration: none;" class="mr-5 hover:text-gray-900">Contact</a>
+        </nav>
+        
+      </div>
+    </header>
+
+    <section class="text-gray-600 body-font -my-8">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-12">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Movie Recommendation System</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">A movie recommendation system or a movie recommender is an ML-based approach to filtering or predicting the users' film preferences based on their past choices and behavior. It's an advanced filtration mechanism that predicts the possible movie choices of the concerned user and their preferences towards a domain-specific item.</p>
+            
+            <p class="text-primary">{{error}}</p>
+            
+          </div>
+          <div class="row ">
+            <div class="col-md-3 -my-50"></div>
+              <div class="center col-md-6">
+                <form action="/recommendation" method ="POST">
+                  <select class="form-select" id="movies" name="movies" aria-label="Default select example">
+                    {% for j in movie_list %}
+                    <option value="{{j}}">{{j}}</option>
+                    {% endfor %}
+                  </select><br>
+                  <button type="submit" class="btn btn-success">Submit</button>
+  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+      </section>
+
+      {% if status == True %}
+
+      <div class="container px-5 py-24 mx-auto -my-33">
+        <div class="flex flex-wrap w-full mb-20">
+          <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+            <h3 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Recommended Movies</h3>
+            <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+          </div>
+
+      <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+        <div class="p-2 sm:w-1/2 w-full">
+          <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+              <path d="M22 4L12 14.01l-3-3"></path>
+            </svg>
+            <span class="title-font font-medium">{{movies_name[0]}}</span>
+          </div>
+        </div>
+        <div class="p-2 sm:w-1/2 w-full">
+          <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+              <path d="M22 4L12 14.01l-3-3"></path>
+            </svg>
+            <span class="title-font font-medium">{{movies_name[1]}}</span>
+          </div>
+        </div>
+        <div class="p-2 sm:w-1/2 w-full">
+          <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+              <path d="M22 4L12 14.01l-3-3"></path>
+            </svg>
+            <span class="title-font font-medium">{{movies_name[2]}}</span>
+          </div>
+        </div>
+        <div class="p-2 sm:w-1/2 w-full">
+          <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+              <path d="M22 4L12 14.01l-3-3"></path>
+            </svg>
+            <span class="title-font font-medium">{{movies_name[3]}}</span>
+          </div>
+        </div>
+        <div class="p-2 sm:w-1/2 w-full">
+          <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+              <path d="M22 4L12 14.01l-3-3"></path>
+            </svg>
+            <span class="title-font font-medium">{{movies_name[4]}}</span>
+          </div>
+        </div>
+        <div class="p-2 sm:w-1/2 w-full">
+          <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+              <path d="M22 4L12 14.01l-3-3"></path>
+            </svg>
+            <span class="title-font font-medium">{{movies_name[5]}}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+      {% endif %}
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>

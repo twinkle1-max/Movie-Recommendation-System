@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie Recommendation System</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  </head>
+  <body class="bg-gray-300">
+    <header class="text-gray-600 body-font -my-8">
+      <div class="container mx-auto flex flex-wrap p-4 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-3 md:mb-0">
+          <div class="w-17 h-17 text-white p-2 rounded-full">
+            <img class="object-cover object-center rounded" alt="hero" src="../static/logo1.svg">
+          </div>
+        </a>
+      
+          <a href="/" style="text-decoration: none;"><span class="ml-3 text-xl -my-50">Movie Recommendation Stytem  </span></a>
+        </a>
+        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+          <a href = "/" style="text-decoration: none;" class ="mr-5 hover:text-gray-900">Home</a>
+          <a href = "/about" style="text-decoration: none;" class="mr-5 hover:text-gray-900">About</a>
+          <a href = "/recommendation" style="text-decoration: none;" class="mr-5 hover:text-gray-900">Recommendation</a>
+          <a href = "/contact" style="text-decoration: none;" class="mr-5 hover:text-gray-900">Contact</a>
+        </nav>
+        
+      </div>
+    </header>
+
+
+    <section class="text-gray-600 body-font relative -my-8">
+        <div class="absolute inset-0 bg-gray-300">
+          <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234700.34595397406!2d77.24107398338815!3d23.199639470339616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c428f8fd68fbd%3A0x2155716d572d4f8!2sBhopal%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1746626053809!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="container px-5 py-24 mx-auto flex">
+          
+
+          <div class="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
+            
+          <form action="action="https://api.web3forms.com/submit" method="POST">  
+
+            <h3 class="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h3>
+            <p class="leading-relaxed mb-5 text-gray-700">Feel free to drop us a line and give us your feedback</p>
+            <div class="relative mb-4">
+              <input type="hidden" name="access_key" value="62f768db-87ac-45e6-b492-da9394f5562c">
+              <label for="email" class="leading-7 text-sm text-gray-900" >Email</label>
+              <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder="Enter Email">
+            </div>
+            <div class="relative mb-4">
+              <label for="message" class="leading-7 text-sm text-gray-900">Message</label>
+              <textarea id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" placeholder="Write your feedback here"></textarea>
+            </div>
+            <button class="text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Submit</button>
+          </form>
+        
+            <p class="text-xs text-gray-700 mt-3">We are happy to hear from you.</p>
+          </div>
+        </div>
+      </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>
